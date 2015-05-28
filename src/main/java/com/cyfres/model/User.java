@@ -33,28 +33,10 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	public User(String nick, String password, String email,
-			Date creationTimestamp, boolean actived, boolean forgot) {
-		this.nick = nick;
-		this.password = password;
-		this.email = email;
-		this.creationTimestamp = creationTimestamp;
-		this.actived = actived;
-		this.forgot = forgot;
-	}
-
-	public User(String name, String nick, String password, String email,
-			Integer level, Date creationTimestamp, String activation,
-			boolean actived, boolean forgot) {
+	public User(String name, String nick, String password) {
 		this.name = name;
 		this.nick = nick;
 		this.password = password;
-		this.email = email;
-		this.level = level;
-		this.creationTimestamp = creationTimestamp;
-		this.activation = activation;
-		this.actived = actived;
-		this.forgot = forgot;
 	}
 
 	@Id
