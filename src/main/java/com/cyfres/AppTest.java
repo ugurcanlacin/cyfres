@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cyfres.model.Genre;
 import com.cyfres.model.User;
 
 public class AppTest {
@@ -22,18 +23,22 @@ public class AppTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
-		User user = new User();
+		/*User user = new User();
 
 		user.setNick("testerboy");
 		user.setLevel(5);
 		user.setActived(true);
-		user.setActivation("þajsdjfasjfuaorni");
+		user.setActivation("ajsdjfasjfuaorni");
 		user.setName("test");
 		user.setEmail("test@test.com");
 		user.setCreationTimestamp(new Date());
 		user.setPassword("password");
 		session.save(user);
+		*/
 		
+		Genre genre = new Genre();
+		genre.setName("Action");
+		session.save(genre);
 		
 		session.getTransaction().commit();
 		session.close();

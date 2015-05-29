@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "genre", catalog = "cyfres")
-public class Genre {
+public class Genre implements java.io.Serializable {
 	private Integer id;
 	private String name;
 	
@@ -22,10 +22,7 @@ public class Genre {
 	}
 	
 	public void setId(Integer id) {
-		if (id > 0) 
-			this.id = id;
-		else
-			throw new IllegalArgumentException();
+		this.id = id;
 	}
 	
 	@Column(name = "name", length = 255)
