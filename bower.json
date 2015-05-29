@@ -6,7 +6,9 @@
     "Ömer Aslan <omer.aslan@ozu.edu.tr>"
   ],
   "dependencies": {
-    "polymer": "*"
+    "polymer": "*",
+    "jquery": "*",
+    "font-awesome": "*"
   },
   "description": "Cyfres is the series tracking app for users.",
   "license": "GPLv2",
