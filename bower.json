@@ -1,0 +1,20 @@
+{
+  "name": "cyfres",
+  "version": "1.0 beta",
+  "homepage": "https://github.com/OEASLAN/cyfres",
+  "authors": [
+    "Ömer Aslan <omer.aslan@ozu.edu.tr>"
+  ],
+  "dependencies": {
+    "polymer": "*"
+  },
+  "description": "Cyfres is the series tracking app for users.",
+  "license": "GPLv2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
