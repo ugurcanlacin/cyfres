@@ -8,18 +8,6 @@ import com.cyfres.model.Series;
 
 public class SeriesTest {
 
-	private Integer id;
-	private String name;
-	private String rating;
-	private String ratingCount;
-	private String image;
-	private String critic;
-	private String review;
-	private String lastUpdate;
-	private String lastEpisode;
-	private String latestEpisode;
-	private String url;
-	
 	@Test
 	public void testName(){
 		Series series = new Series();
