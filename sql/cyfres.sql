@@ -70,3 +70,23 @@ CREATE TABLE IF NOT EXISTS `cyfres`.`Series`(
 `latestEpisode` nvarchar(255),
 `url` nvarchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `SeriesMeta` ADD CONSTRAINT `GenreIdFK` 
+FOREIGN KEY (`id`) REFERENCES `Genre` (`id`) ;
+
+ALTER TABLE `SeriesMeta` ADD CONSTRAINT `SeriesIdFK` 
+FOREIGN KEY (`id`) REFERENCES `Series` (`id`) ;
+
+ALTER TABLE `SeriesMeta` ADD CONSTRAINT `CastIdFK` 
+FOREIGN KEY (`id`) REFERENCES `Cast` (`id`) ;
+
+ALTER TABLE `cyfres`.`seriesmeta` 
+CHANGE COLUMN `casts` `casts` INT(11) NOT NULL ,
+CHANGE COLUMN `genres` `genres` INT(11) NOT NULL ;
+
+ALTER TABLE `cyfres`.`episode` 
+CHANGE COLUMN `season` `season` INT(11) NOT NULL ;
+
+ALTER TABLE `cyfres`.`season` 
+CHANGE COLUMN `series` `series` INT(11) NOT NULL ;
