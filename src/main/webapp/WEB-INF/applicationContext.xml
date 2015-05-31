@@ -21,11 +21,6 @@
      <property name="annotatedClasses">
            <list>
 				<value>com.cyfres.model.User</value>
-				<value>com.cyfres.model.Cast</value>
-				<value>com.cyfres.model.Episode</value>
-				<value>com.cyfres.model.Genre</value>
-				<value>com.cyfres.model.Series</value>
-				<value>com.cyfres.model.Seriesmeta</value>
 			</list>
         </property>
     <property name="hibernateProperties">

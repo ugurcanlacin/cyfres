@@ -1,16 +1,12 @@
 package com.cyfres;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.cyfres.model.Cast;
 import com.cyfres.model.Genre;
-import com.cyfres.model.Series;
 import com.cyfres.model.User;
 
 public class AppTest {
@@ -27,31 +23,22 @@ public class AppTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
-		Series s = new Series();
-		s.setName("Game of Thrones");
+		/*User user = new User();
+
+		user.setNick("testerboy");
+		user.setLevel(5);
+		user.setActived(true);
+		user.setActivation("ajsdjfasjfuaorni");
+		user.setName("test");
+		user.setEmail("test@test.com");
+		user.setCreationTimestamp(new Date());
+		user.setPassword("password");
+		session.save(user);
+		*/
 		
-		Genre g = new Genre();
-		g.setName("Drama");
-		Genre g2 = new Genre();
-		g2.setName("Fantasy");
-		
-		Set<Genre> genreSet = new HashSet<Genre>();
-		genreSet.add(g);
-		genreSet.add(g2);
-		
-		Cast c = new Cast();
-		c.setName("Kit Harington");
-		Cast c2 = new Cast();
-		c2.setName("Sophie Turner");
-		
-		Set<Cast> castSet = new HashSet<Cast>();
-		castSet.add(c);
-		castSet.add(c2);
-		
-		s.setCast(castSet);
-		s.setGenre(genreSet);
-		
-		session.merge(s);
+		Genre genre = new Genre();
+		genre.setName("Action");
+		session.save(genre);
 		
 		session.getTransaction().commit();
 		session.close();
