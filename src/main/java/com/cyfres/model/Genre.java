@@ -1,13 +1,22 @@
 package com.cyfres.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "genre", catalog = "cyfres")
@@ -29,6 +38,7 @@ public class Genre implements java.io.Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	@Column(name = "name", length = 255)
 	public String getName() {

@@ -72,21 +72,23 @@ CREATE TABLE IF NOT EXISTS `cyfres`.`Series`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-ALTER TABLE `SeriesMeta` ADD CONSTRAINT `GenreIdFK` 
-FOREIGN KEY (`id`) REFERENCES `Genre` (`id`) ;
+DROP TABLE `cyfres`.`SeriesMeta`;
 
-ALTER TABLE `SeriesMeta` ADD CONSTRAINT `SeriesIdFK` 
-FOREIGN KEY (`id`) REFERENCES `Series` (`id`) ;
+CREATE TABLE IF NOT EXISTS `cyfres`.`series_casts`(
+`series_id` int(11) not null,
+`casts_id` int(11) not null,
+CONSTRAINT `series_casts_fk` FOREIGN KEY (`series_id`) 
+REFERENCES `Series` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `castsfk` FOREIGN KEY (`casts_id`) 
+REFERENCES `Cast` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
-ALTER TABLE `SeriesMeta` ADD CONSTRAINT `CastIdFK` 
-FOREIGN KEY (`id`) REFERENCES `Cast` (`id`) ;
+CREATE TABLE IF NOT EXISTS `cyfres`.`series_genres`(
+`series_id` int(11) not null,
+`genres_id` int(11) not null,
+CONSTRAINT `series_genres_fk` FOREIGN KEY (`series_id`) 
+REFERENCES `Series` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `genresfk` FOREIGN KEY (`genres_id`) 
+REFERENCES `Genre` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
 
-ALTER TABLE `cyfres`.`seriesmeta` 
-CHANGE COLUMN `casts` `casts` INT(11) NOT NULL ,
-CHANGE COLUMN `genres` `genres` INT(11) NOT NULL ;
-
-ALTER TABLE `cyfres`.`episode` 
-CHANGE COLUMN `season` `season` INT(11) NOT NULL ;
-
-ALTER TABLE `cyfres`.`season` 
-CHANGE COLUMN `series` `series` INT(11) NOT NULL ;
