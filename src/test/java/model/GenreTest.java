@@ -18,8 +18,9 @@ public class GenreTest {
 	@Test
 	public void testGenreId() {
 		Genre genre = new Genre();
-		genre.setId(1);
-		assertEquals(1, genre.getId());
+		Integer genreId = 1;
+		genre.setId(genreId);
+		assertEquals(genreId, genre.getId());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
