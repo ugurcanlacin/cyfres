@@ -40,7 +40,13 @@
   <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
     p:sessionFactory-ref="sessionFactory">
   </bean>
-  	<bean id="appTest" class="com.cyfres.AppTest">
+  	<bean id="userDao" class="com.cyfres.dao.imp.UserDaoImp">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+  	<bean id="appTest" class="com.cyfres.AppTest">
+  		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	
 </beans>
