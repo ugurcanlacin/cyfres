@@ -70,3 +70,25 @@ CREATE TABLE IF NOT EXISTS `cyfres`.`Series`(
 `latestEpisode` nvarchar(255),
 `url` nvarchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE `cyfres`.`SeriesMeta`;
+
+CREATE TABLE IF NOT EXISTS `cyfres`.`series_casts`(
+`series_id` int(11) not null,
+`casts_id` int(11) not null,
+CONSTRAINT `series_casts_fk` FOREIGN KEY (`series_id`) 
+REFERENCES `Series` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `castsfk` FOREIGN KEY (`casts_id`) 
+REFERENCES `Cast` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+CREATE TABLE IF NOT EXISTS `cyfres`.`series_genres`(
+`series_id` int(11) not null,
+`genres_id` int(11) not null,
+CONSTRAINT `series_genres_fk` FOREIGN KEY (`series_id`) 
+REFERENCES `Series` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT `genresfk` FOREIGN KEY (`genres_id`) 
+REFERENCES `Genre` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
