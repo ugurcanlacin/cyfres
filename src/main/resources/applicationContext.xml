@@ -54,4 +54,7 @@
 	<bean id="userService" class="com.cyfres.service.imp.UserServiceImp">
 		<property name="userDao" ref="userDao" />
 	</bean>
+	<bean id="seriesService" class="com.cyfres.service.imp.SeriesServiceImp">
+		<property name="seriesDao" ref="seriesDao" />
+	</bean>
 </beans>
