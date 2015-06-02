@@ -46,4 +46,7 @@
 	<bean id="seriesDao" class="com.cyfres.dao.imp.SeriesDaoImp">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<bean id="userService" class="com.cyfres.service.imp.UserServiceImp">
+		<property name="userDao" ref="userDao" />
+	</bean>
 </beans>
