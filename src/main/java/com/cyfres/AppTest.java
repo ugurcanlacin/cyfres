@@ -6,8 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cyfres.dao.SeriesDao;
 import com.cyfres.dao.UserDao;
 import com.cyfres.dao.imp.UserDaoImp;
+import com.cyfres.model.Series;
 import com.cyfres.model.User;
 
 
@@ -28,21 +30,25 @@ public class AppTest {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+	
+	private static SeriesDao seriesDao;
+	
+	public static SeriesDao getSeriesDao() {
+		return seriesDao;
+	}
+	public static void setSeriesDao(SeriesDao seriesDao) {
+		AppTest.seriesDao = seriesDao;
+	}
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
-		User u = new User();
-		u.setName("omer");
-		u.setCreationTimestamp(new Date());
-		u.setEmail("omer@mail.com");
-		u.setPassword("pass2");
-		u.setNick("nickomer");
+		Series series = new Series();
+		series.setName("test");
 		
-		
-		userDao.persist(u);
+		seriesDao.persist(series);
 		
 		session.getTransaction().commit();
 		session.close();

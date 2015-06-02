@@ -46,7 +46,10 @@
   	<bean id="appTest" class="com.cyfres.AppTest">
   		<property name="sessionFactory" ref="sessionFactory" />
 		<property name="userDao" ref="userDao" />
+		<property name="seriesDao" ref="seriesDao" />
 	</bean>
-
+	<bean id="seriesDao" class="com.cyfres.dao.imp.SeriesDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 	
 </beans>
