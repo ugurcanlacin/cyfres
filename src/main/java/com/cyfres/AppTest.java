@@ -45,10 +45,7 @@ public class AppTest {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
-		Series series = new Series();
-		series.setName("test");
-		
-		seriesDao.persist(series);
+		System.out.println(userDao.findByNick("nick").getName());
 		
 		session.getTransaction().commit();
 		session.close();

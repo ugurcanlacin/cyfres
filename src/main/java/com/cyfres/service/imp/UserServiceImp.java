@@ -26,4 +26,8 @@ public class UserServiceImp extends GenericServiceImp<User> implements UserServi
 		return userDao;
 	}
 
+	public User findByNick(String nick) {
+		return userDao.findByNick(nick);
+	}
+
 }
