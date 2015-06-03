@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/theme.min.css">
+
+	<title>Cyfres Homepage</title>
+	<style type="text/css">
+	body{
+		margin-top: 80px;
+	}
+		.front-bg {
+	
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    background: black;
+}
+.front-bg img {
+    display: block;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.navbar-custom {
+	background-color:rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    0px 5px 10px rgba(0, 0, 0, 0.3);
+    box-shadow:         0px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index:999;
+}
+.navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:hover {
+  background-color: #ddd;
+  color: #000;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #ddd;
+
+}
+.navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #000;
+}
+
+.navbar-brand {
+	color: #fff;
+}
+
+.panel-custom, .panel-custom > .panel-heading {
+	background: none;
+	background-color:rgba(255, 255, 255, 0.2);
+	border:0;
+	color:#fff;
+}
+
+.quote {
+	position: fixed;
+
+    bottom:0%;
+}
+.login {
+}
+.nav a {
+	color: #fff;
+}
+		</style>
+</head>
+<body>
+<nav class="navbar navbar-custom navbar-fixed-top">
+      <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Cyfres</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          
+          <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">English <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <div class="front-bg"><img src="images/tbbt.jpg" width="100%" height="100%" /></div>
+    
+    <div class="login">
+    	<div class="container">
+			<div class="row">
+				<div class="col-md-4 quote hidden-xs">
+					<div class="panel panel-custom">
+						<div class="panel-body">
+							<b>Sheldon</b>: Why are you crying? <br>
+<b>Penny</b>: Because I'm stupid. <br>
+<b>Sheldon</b>: That's no reason to cry. One cries because one is sad. For example, I cry because others are stupid, and that makes me sad.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-7">
+					<div class="panel panel-success" style="margin-top:10%;">
+						
+						<div class="panel-body">
+							<input type="text" class="form-control" placeholder="Username"><br>
+
+							<input type="text" class="form-control" placeholder="Password" style="width:60%;float:left;margin-right:2%">
+							<button class="btn btn-default" style="width:38%">Login</button>
+							
+						</div> 
+						<div class="panel-footer">
+							<input type="checkbox" id="remember"> <small><label for="remember">Remember me</label> . <a href="#">Forgotten?</a></small><small class="pull-right"><a href="#">Register</a></small>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+    </div>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

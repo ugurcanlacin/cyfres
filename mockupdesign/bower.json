@@ -1,0 +1,21 @@
+{
+  "name": "mockupdesign",
+  "version": "0.0.0",
+  "homepage": "https://github.com/OEASLAN/cyfres",
+  "authors": [
+    "Ömer Aslan <omer.aslan@ozu.edu.tr>"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap": "*",
+    "font-awesome": "*"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
