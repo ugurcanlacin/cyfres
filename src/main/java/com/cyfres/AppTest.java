@@ -11,6 +11,7 @@ import com.cyfres.dao.UserDao;
 import com.cyfres.dao.imp.UserDaoImp;
 import com.cyfres.model.Series;
 import com.cyfres.model.User;
+import com.cyfres.service.TMDBConnection;
 
 
 public class AppTest {
@@ -40,16 +41,13 @@ public class AppTest {
 		AppTest.seriesDao = seriesDao;
 	}
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+		TMDBConnection connection = new TMDBConnection();
+		try {
+			connection.sendGet();
+		} catch (Exception e) {
+			
+		}
 		
-		System.out.println(userDao.findByNick("nick").getName());
-		
-		session.getTransaction().commit();
-		session.close();
-		context.close();
 	}
 
 }
