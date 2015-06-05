@@ -1,0 +1,78 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+  <context:component-scan base-package="com.cyfres.*" />
+    
+  <tx:annotation-driven/>
+  
+ <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/cyfres" />
+    <property name="username" value="root" />
+    <property name="password" value="root" />
+  </bean>
+
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"></property>
+     <property name="annotatedClasses">
+           <list>
+				<value>com.cyfres.model.User</value>
+				<value>com.cyfres.model.Cast</value>
+				<value>com.cyfres.model.Episode</value>
+				<value>com.cyfres.model.Genre</value>
+				<value>com.cyfres.model.Season</value>
+				<value>com.cyfres.model.Series</value>
+			</list>
+        </property>
+    <property name="hibernateProperties">
+      <props>
+        <prop 
+         key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+        <prop key="hibernate.show_sql">true</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager" 
+    p:sessionFactory-ref="sessionFactory">
+  </bean>
+  	<bean id="appTest" class="com.cyfres.AppTest">
+  		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="userDao" ref="userDao" />
+		<property name="seriesDao" ref="seriesDao" />
+	</bean>
+  
+  <!-- DAO BEANS START-->
+  	<bean id="userDao" class="com.cyfres.dao.imp.UserDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="seriesDao" class="com.cyfres.dao.imp.SeriesDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="seasonDao" class="com.cyfres.dao.imp.SeasonDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="genreDao" class="com.cyfres.dao.imp.GenreDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- DAO BEANS END-->
+	
+	<!-- SERVICE BEANS START-->
+	<bean id="userService" class="com.cyfres.service.imp.UserServiceImp">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="seriesService" class="com.cyfres.service.imp.SeriesServiceImp">
+		<property name="seriesDao" ref="seriesDao" />
+	</bean>
+	<bean id="seasonService" class="com.cyfres.service.imp.SeasonServiceImp">
+		<property name="seasonDao" ref="seasonDao" />
+	</bean>
+	<bean id="genreService" class="com.cyfres.service.imp.GenreServiceImp">
+		<property name="genreDao" ref="genreDao" />
+	</bean>
+	<!-- SERVICE BEANS END-->
+</beans>
