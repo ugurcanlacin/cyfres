@@ -66,26 +66,17 @@
 	color: #fff;
 }
 
-.panel-custom, .panel-custom > .panel-footer {
+.panel-custom, .panel-custom > .panel-heading {
 	background: none;
 	background-color:rgba(255, 255, 255, 0.2);
 	border:0;
 	color:#fff;
-
-}
-.panel-footer {
-  cursor:pointer;
-}
-.panel-footer:hover {
-  color: #000;
-  background-color:rgba(255, 255, 255, 0.5);
 }
 
 .quote {
 	position: fixed;
 
-    bottom:10%;
-    color: #fff;
+    bottom:0%;
 }
 .login {
 }
@@ -131,11 +122,13 @@
     	<div class="container">
 			<div class="row">
 				<div class="col-md-4 quote hidden-xs">
-            
+					<div class="panel panel-custom">
+						<div class="panel-body">
 							<b>Sheldon</b>: Why are you crying? <br>
 <b>Penny</b>: Because I'm stupid. <br>
 <b>Sheldon</b>: That's no reason to cry. One cries because one is sad. For example, I cry because others are stupid, and that makes me sad.
-				
+						</div>
+					</div>
 				</div>
 				<div class="col-md-4 col-md-offset-7">
 					<div class="panel panel-success" style="margin-top:10%;">
@@ -148,7 +141,7 @@
 							
 						</div> 
 						<div class="panel-footer">
-							<input type="checkbox" id="remember"> <small><label for="remember" style="cursor: pointer;">Remember me</label> . <a href="#">Forgotten?</a></small><small class="pull-right"><a href="#">Register</a></small>
+							<input type="checkbox" id="remember"> <small><label for="remember">Remember me</label> . <a href="#">Forgotten?</a></small><small class="pull-right"><a href="#">Register</a></small>
 						</div>
 					</div>
 					

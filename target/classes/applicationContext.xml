@@ -41,38 +41,6 @@
     p:sessionFactory-ref="sessionFactory">
   </bean>
   	<bean id="appTest" class="com.cyfres.AppTest">
-  		<property name="sessionFactory" ref="sessionFactory" />
-		<property name="userDao" ref="userDao" />
-		<property name="seriesDao" ref="seriesDao" />
-	</bean>
-  
-  <!-- DAO BEANS START-->
-  	<bean id="userDao" class="com.cyfres.dao.imp.UserDaoImp">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="seriesDao" class="com.cyfres.dao.imp.SeriesDaoImp">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="seasonDao" class="com.cyfres.dao.imp.SeasonDaoImp">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="genreDao" class="com.cyfres.dao.imp.GenreDaoImp">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<!-- DAO BEANS END-->
-	
-	<!-- SERVICE BEANS START-->
-	<bean id="userService" class="com.cyfres.service.imp.UserServiceImp">
-		<property name="userDao" ref="userDao" />
-	</bean>
-	<bean id="seriesService" class="com.cyfres.service.imp.SeriesServiceImp">
-		<property name="seriesDao" ref="seriesDao" />
-	</bean>
-	<bean id="seasonService" class="com.cyfres.service.imp.SeasonServiceImp">
-		<property name="seasonDao" ref="seasonDao" />
-	</bean>
-	<bean id="genreService" class="com.cyfres.service.imp.GenreServiceImp">
-		<property name="genreDao" ref="genreDao" />
-	</bean>
-	<!-- SERVICE BEANS END-->
 </beans>
