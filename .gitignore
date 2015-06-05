@@ -1,4 +1,9 @@
 #bower_components
 bower_components/
 #target
-**/target
+*/target/*
+*/target/**
+.classpath
+.project
+.settings/
+target/
