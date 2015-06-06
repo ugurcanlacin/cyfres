@@ -8,11 +8,25 @@
 	<display-name>Cyfres</display-name>
 
 
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+
  <!-- Spring Context Configuration' s Path definition--> 
       <context-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>
       /WEB-INF/applicationContext.xml
+      /WEB-INF/mvc-dispatcher-servlet.xml
       </param-value>
    </context-param>
    
