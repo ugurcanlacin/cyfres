@@ -44,6 +44,7 @@
   		<property name="sessionFactory" ref="sessionFactory" />
 		<property name="userDao" ref="userDao" />
 		<property name="seriesDao" ref="seriesDao" />
+		<property name="seriesService" ref="seriesService" /> 
 	</bean>
   
   <!-- DAO BEANS START-->
