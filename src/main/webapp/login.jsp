@@ -83,7 +83,7 @@
 	color: #fff;
 }
 		</style>
-<title>Insert title here</title>
+<title>Cyfres Login Page</title>
 </head>
 <body>
 <nav class="navbar navbar-custom navbar-fixed-top">
@@ -118,18 +118,37 @@
     </nav>
     <div class="front-bg"><img src="<c:url value="/resources/images/tbbt.jpg" />" width="100%" height="100%" /></div>
     
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				Nick: ${usernick} <br>
-				Email: ${email} <br>
-				Name: ${name} <br>
-				<br>
+    <div class="login">
+    	<div class="container">
+			<div class="row">
+				<div class="col-md-4 quote hidden-xs">
+					<div class="panel panel-custom">
+						<div class="panel-body">
+							<b>Sheldon</b>: Why are you crying? <br>
+<b>Penny</b>: Because I'm stupid. <br>
+<b>Sheldon</b>: That's no reason to cry. One cries because one is sad. For example, I cry because others are stupid, and that makes me sad.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-7">
+					<div class="panel panel-success" style="margin-top:10%;">
+						
+						<div class="panel-body">
+							<input type="text" class="form-control" placeholder="Username"><br>
+
+							<input type="text" class="form-control" placeholder="Password" style="width:60%;float:left;margin-right:2%">
+							<button class="btn btn-default" style="width:38%">Login</button>
+							
+						</div> 
+						<div class="panel-footer">
+							<input type="checkbox" id="remember"> <small><label for="remember">Remember me</label> . <a href="#">Forgotten?</a></small><small class="pull-right"><a href="#">Register</a></small>
+						</div>
+					</div>
+					
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	
+    </div>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </body>
