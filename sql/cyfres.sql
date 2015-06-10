@@ -49,14 +49,6 @@ CREATE TABLE IF NOT EXISTS `cyfres`.`Genre`(
 `name` nvarchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-CREATE TABLE IF NOT EXISTS `cyfres`.`SeriesMeta`(
-`id` int(11) not null auto_increment primary key,
-`casts` nvarchar(255),
-`genres` nvarchar(255)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 CREATE TABLE IF NOT EXISTS `cyfres`.`Series`(
 `id` int(11) not null auto_increment primary key,
 `name` nvarchar(255),
@@ -71,8 +63,6 @@ CREATE TABLE IF NOT EXISTS `cyfres`.`Series`(
 `url` nvarchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-DROP TABLE `cyfres`.`SeriesMeta`;
 
 CREATE TABLE IF NOT EXISTS `cyfres`.`series_casts`(
 `series_id` int(11) not null,
