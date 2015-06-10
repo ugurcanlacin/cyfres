@@ -31,12 +31,18 @@ public class UserController {
 	//http://localhost:8080/cyfres/user/get/nick
 	@RequestMapping("/get/{nick}")
 	public ModelAndView findUserByNick(@PathVariable("nick") String nick){
-		ModelAndView model = new ModelAndView("getUser");
-		User user = userService.findByNick(nick);
-		model.addObject("usernick", user.getNick());
-		model.addObject("email", user.getEmail());
-		model.addObject("name", user.getName());
-		return model;
+		try {
+			User user = userService.findByNick(nick);
+			ModelAndView model = new ModelAndView("getUser");
+			model.addObject("usernick", user.getNick());
+			model.addObject("email", user.getEmail());
+			model.addObject("name", user.getName());
+			return model;
+		} catch (NullPointerException e) {
+			ModelAndView model = new ModelAndView("NotFoundUser");
+			model.addObject("usernick", nick);
+			return model;
+		}		
 	}
 	
 	//http://localhost:8080/cyfres/user/index

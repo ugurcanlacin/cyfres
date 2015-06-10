@@ -4,6 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 <title>Insert title here</title>
 </head>
 <body>
