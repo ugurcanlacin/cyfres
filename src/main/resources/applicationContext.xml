@@ -75,7 +75,5 @@
 	<bean id="genreService" class="com.cyfres.service.imp.GenreServiceImp">
 		<property name="genreDao" ref="genreDao" />
 	</bean>
-	<bean id="tmdbApiServiceImp" class="com.cyfres.service.imp.TMDBApiServiceImp">
-	</bean>
 	<!-- SERVICE BEANS END-->
 </beans>
