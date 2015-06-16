@@ -7,8 +7,10 @@ import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cyfres.model.User;
@@ -38,7 +40,7 @@ public class SeriesController {
 	//id(TMDB ID), poster_path(contains tmdb image url path),series title, series first air date
 
 	@RequestMapping(value="/search",method = RequestMethod.POST)
-	public ModelAndView searchSeriesByTitle(@ModelAttribute("title") String title){
+	public ModelAndView searchSeriesByTitle(@RequestParam String title){
 		JSONObject seriesData = apiService.searchSeries(title);
 		String customizedJSONData = seriesDataHandler.getCustomizedJSONData(seriesData);
 		ModelAndView model = new ModelAndView("seriesByTitle");
@@ -46,9 +48,7 @@ public class SeriesController {
 		return model;
 	}
 	
-	
-	
-	
+
 	
 	
 	
